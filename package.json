@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Oneyun Server-Side SDK documentations",
   "main": "index.js",
+  "repository": "https://github.com/liushuixingyun/oneyun-server-sdk-docs.git",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,5 +11,10 @@
   "license": "MIT",
   "dependencies": {
     "gitbook-cli": "^2.3.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "node_modules/.bin/gitbook build",
+    "serve": "node_modules/.bin/gitbook serve"
   }
 }
