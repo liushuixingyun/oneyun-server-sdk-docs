@@ -1,0 +1,14 @@
+{
+  "name": "oneyun-server-sdk-docs",
+  "version": "1.0.0",
+  "description": "Oneyun Server-Side SDK documentations",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "liuxy@oneyun.com",
+  "license": "MIT",
+  "dependencies": {
+    "gitbook-cli": "^2.3.0"
+  }
+}
