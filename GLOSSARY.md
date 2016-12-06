@@ -1,10 +1,16 @@
 # 术语
 
+## oneyun
+http://oneyun.com/
+
 ## composer
-http://getcomposer.org/
+http://packagist.org/
 
 ## npm
-http://npm.org/
+http://npmjs.org/
 
 ## maven
-http://maven.apache.org/
+http://maven.org/
+
+## pypi
+http://pypi.python.org/

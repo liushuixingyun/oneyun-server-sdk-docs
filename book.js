@@ -18,15 +18,12 @@ module.exports = {
         sitemap: {
             hostname: "https://github.com/liushuixingyun/yunhuni-server-api-docs"
         },
-        atoc: {
-            "addClass": true,
-            "className": "atoc"
-        },
         "theme-api": {
             "theme": "dark",
             "languages": [{
                 "lang": "js",
-                "name": "NodeJs",
+                "name": "Node.js",
+                "default": true
             }, {
                 "lang": "php",
                 "name": "PHP"
