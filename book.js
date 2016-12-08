@@ -1,13 +1,12 @@
-var pkg = require('./package.json')
+var pkg = require('./package.json');
 
 module.exports = {
     title: "壹耘 Server SDK 参考文档",
     language: "zh",
-    gitbook: '3.1.1',
+    gitbook: '3.2.2',
     plugins: [
         '-sharing',
-				'toc',
-        'sitemap',
+        'toc',
         'codetabs',
         "theme-api"
     ],
@@ -15,9 +14,6 @@ module.exports = {
         version: pkg.version
     },
     pluginsConfig: {
-        sitemap: {
-            hostname: "https://github.com/liushuixingyun/yunhuni-server-api-docs"
-        },
         "theme-api": {
             "theme": "dark",
             "languages": [{
@@ -30,4 +26,4 @@ module.exports = {
             }]
         }
     }
-}
+};
