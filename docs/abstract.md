@@ -25,43 +25,31 @@ $ php composer.phar install
 ## IVR 回复
 利用SDK，快速构建IVR数据，并发送到 Oneyun 平台。
 
-例如，当用户的应用服务程序收到来自 Onyune 的呼入事件后，使用 IVR 告知 Oneyun 接听来电，并播放欢迎语:
+例如，当用户的应用服务程序收到来自 Onyune 的呼入事件后，使用 IVR 告知 Oneyun 接听来电，并播放欢迎语，播放完成后挂断:
 
 {% sample lang="js" -%}
 ```js
-/// ...
+var oneyun = require('oneyun');
+var express = require('express');
+var app = express();
 
-let oneyun = require('oneyun');
-
-/// ...
-
-function onCallIn(req, res) {
+app.get('/ivr', function (req, res) {
   let ivrResp = new oneyun.Ivr();
-  ivrResp.play("song.wav")
-     .next("http://your.company.com/your/next/url");
-  res.setHeader('Content-Type', 'text/xml');
+  ivrResp.play("welcome.wav");
+  res.set('Content-Type', 'text/xml');
   res.send(ivrResp.toXml());
-}
-
-/// ...
+});
 ```
 
 {% sample lang="php" -%}
 ```php
 <?
-/// ...
-
 require "vender\autoload.php";
 
-/// ...
-
-function on_call_in(request) {
-  $ivr_resp = new Oneyun\Ivr();
-  $ivr_resp->play("song.wav")
-      ->next("http://your.company.com/your/next/url");
-  header("Content-Type": "text/xml");
-  echo $ivr_resp;
-}
+$ivr_resp = new Oneyun\Ivr();
+$ivr_resp->play("welcome.wav");
+header("Content-Type": "text/xml");
+echo $ivr_resp;
 ```
 
 {% endmethod %}
