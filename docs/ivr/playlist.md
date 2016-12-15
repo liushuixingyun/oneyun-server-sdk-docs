@@ -7,11 +7,11 @@
 
 | 参数名称   | 数据类型  | 是否必填  | 说明      |
 | ----------------- | -----------  | -----| ---------------------------------------- |
-| `content`         | 字符串        |  是  | 放音文件                        |
-| `options`         | 数组          |  否  | 自定义参数  参见[play属性列表](#play属性列表)                     |
+| `content`         | 字符串 &#124; 数组         |  是  | 放音文件列表                        |
+| `options`         | 数组          |  否  | 自定义参数  参见[playlist属性列表](#playlist属性列表)                     |
 
 
-#### play属性列表
+#### playlist属性列表
 
 | 枚举值  | 说明           |
 | ---- | ------------ |
@@ -33,10 +33,14 @@
 require __DIR__."/vendor/autoload.php";
 header("Content-type:text/xml");
 
-$ivr_resp = new Oneyun\Ivr();
-$ivr_resp->play("welcome.wav");
+$ivr = new Oneyun\Ivr();
+$ivr->playlist(
+  array(
+    'weclome.wav',
+    'weclome1.wav'
+  )
+);
 
-echo $ivr_resp;
 ```
 
 {% sample lang="js" -%}
@@ -47,7 +51,11 @@ echo $ivr_resp;
 {% sample lang="php" -%}
 ```php
 
-$ivr_resp->play("welcome.wav",
+$ivr_resp->playlist("welcome.wav",
+  array(
+    'weclome.wav',
+    'weclome1.wav'
+  ),
   array(
     "finish_keys"=>'#',
     "repeat"=>'3'

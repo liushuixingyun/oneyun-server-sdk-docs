@@ -1,5 +1,4 @@
-# 放音
-
+# 录音
 
 {% method -%}
 
@@ -7,16 +6,16 @@
 
 | 参数名称   | 数据类型  | 是否必填  | 说明      |
 | ----------------- | -----------  | -----| ---------------------------------------- |
-| `content`         | 字符串        |  是  | 放音文件                        |
-| `options`         | 数组          |  否  | 自定义参数  参见[play属性列表](#play属性列表)                     |
+| `options`         | 数组          |  否  | 自定义参数  参见[record属性列表](#record属性列表)  |
 
 
-#### play属性列表
+#### record属性列表
 
 | 枚举值  | 说明           |
 | ---- | ------------ |
-| `finish_keys`|中断码 |
-| `repeat`|重复次数 |
+| `max_duration`|最长录音时限（秒） |
+| `beeping`| 是否在录音之前播放"嘀"的一声 |
+| `finish_keys`| 中断码 |
 
 
 
@@ -33,10 +32,9 @@
 require __DIR__."/vendor/autoload.php";
 header("Content-type:text/xml");
 
-$ivr_resp = new Oneyun\Ivr();
-$ivr_resp->play("welcome.wav");
+$ivr = new Oneyun\Ivr();
+$ivr->record();
 
-echo $ivr_resp;
 ```
 
 {% sample lang="js" -%}
@@ -47,8 +45,9 @@ echo $ivr_resp;
 {% sample lang="php" -%}
 ```php
 
-$ivr_resp->play("welcome.wav",
+$ivr_resp->record(
   array(
+    "beeping"=>true,
     "finish_keys"=>'#',
     "repeat"=>'3'
   )

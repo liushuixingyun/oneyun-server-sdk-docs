@@ -16,7 +16,7 @@ $ npm install oneyun-server-sdk
 
 {% sample lang="php" -%}
 ```sh
-$ php composer.phar install
+$ composer install oneyun/sdk
 ```
 
 {% endmethod %}
@@ -43,12 +43,14 @@ app.get('/ivr', function (req, res) {
 
 {% sample lang="php" -%}
 ```php
-<?
-require "vender\autoload.php";
+<?php
+require __DIR__."/vendor/autoload.php";
+
+header("Content-type:text/xml");
 
 $ivr_resp = new Oneyun\Ivr();
 $ivr_resp->play("welcome.wav");
-header("Content-Type": "text/xml");
+
 echo $ivr_resp;
 ```
 
