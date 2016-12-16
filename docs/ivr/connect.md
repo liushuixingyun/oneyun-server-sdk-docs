@@ -30,11 +30,13 @@
 
 
 ### 示例
+{% sample lang="js" -%}simple 示例
 
 {% sample lang="js" -%}
 ```js
 // 示例
 ```
+{% sample lang="php" -%} simple 示例
 
 {% sample lang="php" -%}
 ```php
@@ -45,17 +47,25 @@ header("Content-type:text/xml");
 $ivr_resp = new Oneyun\Ivr();
 $ivr_resp->connect();
 
+//输出结果
 echo $ivr_resp;
 ```
+{% sample lang="js" -%} complete 示例
 
 {% sample lang="js" -%}
 ```js
 // 示例
 ```
 
+{% sample lang="php" -%} complete 示例
+
 {% sample lang="php" -%}
 ```php
+<?php
+require __DIR__."/vendor/autoload.php";
+header("Content-type:text/xml");
 
+$ivr_resp = new Oneyun\Ivr();
 $ivr_resp->connect("welcome.wav",
   array(
     "max_duration"=>50,
@@ -63,6 +73,8 @@ $ivr_resp->connect("welcome.wav",
   )
 );
 
+//输出结果
+echo $ivr_resp;
 ```
 
 {% endmethod %}

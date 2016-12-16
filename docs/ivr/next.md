@@ -20,8 +20,10 @@
 require __DIR__."/vendor/autoload.php";
 header("Content-type:text/xml");
 
-$ivr = new Oneyun\Ivr();
-$ivr->next("http://localhost/demo.php");
+$ivr_resp = new Oneyun\Ivr();
+$ivr_resp->next("http://localhost/demo.php");
 
+//输出结果
+echo $ivr_resp;
 ```
 {% endmethod %}
