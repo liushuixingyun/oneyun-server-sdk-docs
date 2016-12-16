@@ -1,14 +1,16 @@
-# 简单呼出
+# RESET API
 
 <!-- toc -->
 
  --------------------------------------------------------------------------------
- 开发者可以使用Oneyun的`REST API`快速的实现语音回拨、语音验证码、语音通知等一系列功能。
+ 开发者可以使用Oneyun的`REST API`快速的实现语音回拨、语音验证码、语音通知、IVR呼出等一系列功能。
+ 
+ 目前Oneyun 的 `REST API` 提供`PHP`、`Nodejs`等多种语言SDK。开发者可根据实际开发需求，可通过各种语言的包管理（`composer`,`npm`,`maven`）安装使用。
 
 
- 使用Oneyun SDK 实现 语音回拨
+ 提供简单案列 。快速使用Oneyun SDK 实现 语音回拨
 
-
+ **步骤**
  1. 登录壹耘控制台页面，获取` 接口API`、`密钥`、`鉴权账号`、`应用标识`。
  2. 在项目目录下，安装和引用 Oneyun SDK（见[引用](#引用)）。
  3. 使用语音回拨 SDK 代码，填写参数（第一方的被叫号码，第二方的被叫号码），得到回调结果。见[例子](#例子)
@@ -79,8 +81,10 @@ $client = new Oneyun\Rest\Client($appId, $certId, $apiUrl, $secreKey);
 
 {% endmethod %}
 
-## 调用
+
 {% method -%}
+
+## 调用
 
 {% sample lang="js" -%}
 
@@ -111,8 +115,11 @@ print_r($res);
 
 
 
-## 返回
+
 {% method -%}
+
+## 返回
+
 {% sample lang="js" -%}
 
 ```javascript
@@ -159,12 +166,14 @@ Array
 
 {% endmethod %}
 
+
+{% method -%}
+
 ## 例子
 
 此例子中，当用户发起呼叫指令, 由云平台给主被叫双方拨打电话进行连通, 双方接听后进行通话, 可通过API控制两端的通话, 来电号码可隐匿, 效果可监控
 
 
-{% method -%}
 
 {% sample lang="js" -%}
 
