@@ -43,7 +43,7 @@ require __DIR__."/vendor/autoload.php";
  */
 $oneyun = new Oneyun\Rest\Client($appId, $certId, $apiUrl, $secreKey);
 
-$oneyun->verfiyCall->create(
+$result = $oneyun->verfiyCall->create(
     '17606661993',
     '8888' //播放的验证码
 );
