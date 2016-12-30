@@ -13,6 +13,7 @@
   * [Playlist](docs/ivr/playlist.md)
   * [Record](docs/ivr/record.md)
   * [Send_dtmf](docs/ivr/send_dtmf.md)
+  * [Get](docs/ivr/get.md)
   * [Hangup](docs/ivr/hangup.md)
   * [Dial](docs/ivr/dial.md)
   * [Connect](docs/ivr/connect.md)

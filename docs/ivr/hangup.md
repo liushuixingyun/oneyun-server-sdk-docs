@@ -20,9 +20,11 @@
 require __DIR__."/vendor/autoload.php";
 header("Content-type:text/xml");
 
-$ivr = new Oneyun\Ivr();
-$ivr->hangup();
+$ivr_resp = new Oneyun\Ivr();
+$ivr_resp->hangup();
 
+//输出结果
+echo $ivr_resp;
 ```
 
 {% endmethod %}

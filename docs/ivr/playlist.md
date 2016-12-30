@@ -22,10 +22,13 @@
 
 ### 示例
 
+{% sample lang="js" -%} simple 示例
+
 {% sample lang="js" -%}
 ```js
 // 示例
 ```
+{% sample lang="php" -%} simple 示例
 
 {% sample lang="php" -%}
 ```php
@@ -33,25 +36,33 @@
 require __DIR__."/vendor/autoload.php";
 header("Content-type:text/xml");
 
-$ivr = new Oneyun\Ivr();
-$ivr->playlist(
+$ivr_resp = new Oneyun\Ivr();
+$ivr_resp->playlist(
   array(
     'weclome.wav',
     'weclome1.wav'
   )
 );
 
+//输出结果
+echo $ivr_resp;
 ```
+{% sample lang="js" -%} complete 示例
 
 {% sample lang="js" -%}
 ```js
 // 示例
 ```
 
+{% sample lang="php" -%} complete 示例
+
 {% sample lang="php" -%}
 ```php
+require __DIR__."/vendor/autoload.php";
+header("Content-type:text/xml");
 
-$ivr_resp->playlist("welcome.wav",
+$ivr_resp = new Oneyun\Ivr();
+$ivr_resp->playlist(
   array(
     'weclome.wav',
     'weclome1.wav'
@@ -62,6 +73,8 @@ $ivr_resp->playlist("welcome.wav",
   )
 );
 
+//输出结果
+echo $ivr_resp;
 ```
 
 {% endmethod %}

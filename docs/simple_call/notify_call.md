@@ -41,8 +41,6 @@ require __DIR__."/vendor/autoload.php";
  * @params certId 鉴权Id
  * @params apiUrl 接口地址
  * @params secreKey 密钥
- * [$oneyun description]
- * @type {Oneyun}
  */
 $oneyun = new Oneyun\Rest\Client($appId, $certId, $apiUrl, $secreKey);
 
@@ -51,7 +49,7 @@ $play_content = array(
    array(date('Y-m-d H:i:s'),4,'')
 );
 
-$oneyun->notifyCall->create(
+$result = $oneyun->notifyCall->create(
     '17606661993',
     $play_content,
     array(
@@ -61,6 +59,8 @@ $oneyun->notifyCall->create(
     )
 );
 
+//打印返回结果
+print_r($result)
 ```
 
 {% endmethod %}

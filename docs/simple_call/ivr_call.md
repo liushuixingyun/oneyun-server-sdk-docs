@@ -37,18 +37,20 @@ require __DIR__."/vendor/autoload.php";
  * @params certId 鉴权Id
  * @params apiUrl 接口地址
  * @params secreKey 密钥
- * [$oneyun description]
- * @type {Oneyun}
  */
 $oneyun = new Oneyun\Rest\Client($appId, $certId, $apiUrl, $secreKey);
 
-$oneyun->ivrCall->create(
+$result = $oneyun->ivrCall->create(
     '17606661993',
     array(
         'user_data'=>'',
         'max_dial_duration'=>30
     )
 );
+
+//打印返回结果
+print_r($result)
+
 ```
 
 {% endmethod %}
